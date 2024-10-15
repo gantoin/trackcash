@@ -1,6 +1,7 @@
-package com.levodev.data;
+package com.levodev.data.repository;
 
 
+import com.levodev.data.domain.BudgetTag;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 

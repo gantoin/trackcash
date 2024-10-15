@@ -1,6 +1,6 @@
 package com.levodev.views.budgettags;
 
-import com.levodev.data.BudgetTag;
+import com.levodev.data.domain.BudgetTag;
 import com.levodev.services.BudgetTagService;
 import com.levodev.views.MainLayout;
 import com.vaadin.flow.component.UI;
@@ -30,12 +30,13 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.StreamResource;
 import com.vaadin.flow.spring.data.VaadinSpringDataHelpers;
 import jakarta.annotation.security.PermitAll;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.orm.ObjectOptimisticLockingFailureException;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.util.Base64;
 import java.util.Optional;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.orm.ObjectOptimisticLockingFailureException;
 
 @PageTitle("Budget Tags")
 @Route(value = "budget-tags/:budgetTagID?/:action?(edit)", layout = MainLayout.class)

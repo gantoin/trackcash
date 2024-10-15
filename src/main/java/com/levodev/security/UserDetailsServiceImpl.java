@@ -1,9 +1,7 @@
 package com.levodev.security;
 
-import com.levodev.data.User;
-import com.levodev.data.UserRepository;
-import java.util.List;
-import java.util.stream.Collectors;
+import com.levodev.data.domain.User;
+import com.levodev.data.repository.UserRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,6 +9,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
@@ -34,7 +35,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     }
 
     private static List<GrantedAuthority> getAuthorities(User user) {
-        return user.getRoles().stream().map(role -> new SimpleGrantedAuthority("ROLE_" + role))
+        return user.getRoleEnums().stream().map(role -> new SimpleGrantedAuthority("ROLE_" + role))
                 .collect(Collectors.toList());
 
     }

@@ -1,12 +1,13 @@
 package com.levodev.security;
 
-import com.levodev.data.User;
-import com.levodev.data.UserRepository;
+import com.levodev.data.domain.User;
+import com.levodev.data.repository.UserRepository;
 import com.vaadin.flow.spring.security.AuthenticationContext;
-import java.util.Optional;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Optional;
 
 @Component
 public class AuthenticatedUser {

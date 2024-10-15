@@ -1,12 +1,13 @@
 package com.levodev.services;
 
-import com.levodev.data.BudgetTag;
-import com.levodev.data.BudgetTagRepository;
-import java.util.Optional;
+import com.levodev.data.domain.BudgetTag;
+import com.levodev.data.repository.BudgetTagRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class BudgetTagService {

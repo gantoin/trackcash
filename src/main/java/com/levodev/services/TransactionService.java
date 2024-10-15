@@ -1,27 +1,28 @@
 package com.levodev.services;
 
-import com.levodev.data.SamplePerson;
-import com.levodev.data.SamplePersonRepository;
-import java.util.Optional;
+import com.levodev.data.domain.Transaction;
+import com.levodev.data.repository.TransactionRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
-public class SamplePersonService {
+public class TransactionService {
 
-    private final SamplePersonRepository repository;
+    private final TransactionRepository repository;
 
-    public SamplePersonService(SamplePersonRepository repository) {
+    public TransactionService(TransactionRepository repository) {
         this.repository = repository;
     }
 
-    public Optional<SamplePerson> get(Long id) {
+    public Optional<Transaction> get(Long id) {
         return repository.findById(id);
     }
 
-    public SamplePerson update(SamplePerson entity) {
+    public Transaction update(Transaction entity) {
         return repository.save(entity);
     }
 
@@ -29,11 +30,11 @@ public class SamplePersonService {
         repository.deleteById(id);
     }
 
-    public Page<SamplePerson> list(Pageable pageable) {
+    public Page<Transaction> list(Pageable pageable) {
         return repository.findAll(pageable);
     }
 
-    public Page<SamplePerson> list(Pageable pageable, Specification<SamplePerson> filter) {
+    public Page<Transaction> list(Pageable pageable, Specification<Transaction> filter) {
         return repository.findAll(filter, pageable);
     }
 

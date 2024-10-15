@@ -1,6 +1,6 @@
 package com.levodev.views;
 
-import com.levodev.data.User;
+import com.levodev.data.domain.User;
 import com.levodev.security.AuthenticatedUser;
 import com.levodev.views.budgettags.BudgetTagsView;
 import com.levodev.views.dashboard.DashboardView;
@@ -9,12 +9,7 @@ import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.avatar.Avatar;
 import com.vaadin.flow.component.contextmenu.MenuItem;
-import com.vaadin.flow.component.html.Anchor;
-import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.html.Footer;
-import com.vaadin.flow.component.html.H1;
-import com.vaadin.flow.component.html.Header;
-import com.vaadin.flow.component.html.Span;
+import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.menubar.MenuBar;
 import com.vaadin.flow.component.orderedlayout.Scroller;
@@ -24,9 +19,10 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.server.StreamResource;
 import com.vaadin.flow.server.auth.AccessAnnotationChecker;
 import com.vaadin.flow.theme.lumo.LumoUtility;
+import org.vaadin.lineawesome.LineAwesomeIcon;
+
 import java.io.ByteArrayInputStream;
 import java.util.Optional;
-import org.vaadin.lineawesome.LineAwesomeIcon;
 
 /**
  * The main view is a top-level placeholder for other views.

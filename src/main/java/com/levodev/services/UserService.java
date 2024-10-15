@@ -1,12 +1,13 @@
 package com.levodev.services;
 
-import com.levodev.data.User;
-import com.levodev.data.UserRepository;
-import java.util.Optional;
+import com.levodev.data.domain.User;
+import com.levodev.data.repository.UserRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class UserService {
